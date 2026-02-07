@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Footprint - รอยเท้าดิจิทัล</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .highlight-yellow {
+            color: #FACC15;
+        }
+        .bg-yellow-custom {
+            background-color: #FACC15;
+            color: #000000;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 25px -5px rgba(250, 204, 21, 0.15), 0 10px 10px -5px rgba(250, 204, 21, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FACC15;
+            border-radius: 5px;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-icon {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes patternMove {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(40px) translateY(40px); }
+        }
+        .moving-pattern rect {
+            animation: patternMove 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/30 transition-all duration-300" data-aos="fade-down" data-aos-duration="1000">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider hover:text-yellow-400 transition cursor-pointer">
+                DIGITAL <span class="highlight-yellow">FOOTPRINT</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#intro" class="hover:text-yellow-400 transition relative group">
+                    รู้จัก Digital Footprint
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#types" class="hover:text-yellow-400 transition relative group">
+                    ประเภท
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#cases" class="hover:text-yellow-400 transition relative group">
+                    กรณีศึกษา
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#howto" class="hover:text-yellow-400 transition relative group">
+                    วิธีป้องกัน
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#quiz" class="px-6 py-2 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-[0_0_15px_rgba(250,204,21,0.5)]">แบบทดสอบ</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="intro" class="pt-40 pb-20 px-6 text-center relative overflow-hidden min-h-screen flex flex-col justify-center items-center">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none moving-pattern">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FACC15" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="120%" height="120%" fill="url(#grid)" style="transform: translate(-10%, -10%);" />
+            </svg>
+        </div>
+        
+        <h1 class="text-6xl md:text-8xl font-bold mb-6 relative z-10" data-aos="zoom-in" data-aos-duration="1200">
+            Digital <span class="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]">Footprint</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto relative z-10" data-aos="fade-up" data-aos-delay="300">
+            "ทุกย่างก้าวในโลกออนไลน์... มันจะย้อนกลับมาทำอะไรเราได้บ้าง?"
+        </p>
+        
+        <div class="relative group" data-aos="fade-up" data-aos-delay="500">
+            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative p-8 bg-gray-900 border border-yellow-500/30 rounded-xl max-w-4xl mx-auto backdrop-blur-xl">
+                <h3 class="text-3xl font-bold text-yellow-400 mb-4">Digital Footprint คืออะไร?</h3>
+                <p class="text-lg text-gray-200 leading-relaxed">
+                    ข้อมูลทั้งหมดที่ทิ้งไว้จากการใช้งานอินเทอร์เน็ต ทั้งที่ตั้งใจและไม่ตั้งใจ เช่น โพสต์, คอมเมนต์, ไลค์, แชร์, การค้นหาข้อมูล (Search), การซื้อของออนไลน์, หรือประวัติการเข้าเว็บไซต์ ซึ่งร่องรอยเหล่านี้จะถูกบันทึกไว้และติดตามย้อนกลับได้
+                </p>
+            </div>
+        </div>
+        
+        <div class="mt-16 animate-bounce text-yellow-400">
+            <i data-lucide="chevron-down" class="w-10 h-10"></i>
+        </div>
+        
+        <p class="mt-8 text-sm text-gray-500 absolute bottom-4">By กลุ่ม 1</p>
+    </header>
+
+    <section id="types" class="py-24 bg-zinc-900 relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">ประเภทของ <span class="text-yellow-400">รอยเท้า</span></h2>
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="flex-1 bg-gradient-to-br from-gray-900 to-black border-l-4 border-yellow-400 p-8 rounded-xl card-hover relative group" data-aos="fade-right" data-aos-delay="200">
+                    <div class="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition transform group-hover:rotate-12">
+                        <i data-lucide="mouse-pointer-2" class="w-24 h-24 text-yellow-400"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-yellow-400/10 rounded-lg mr-4">
+                            <i data-lucide="mouse-pointer-click" class="text-yellow-400 w-8 h-8"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold">1. Active Digital Footprint</h2>
+                    </div>
+                    <p class="text-yellow-400/80 mb-4 font-semibold tracking-wide uppercase text-sm">(สิ่งที่เราสร้างเอง)</p>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        คือข้อมูลที่เกิดจากการที่ผู้ใช้ <strong>"เจตนา"</strong> แบ่งปันหรือส่งออกไปในโลกออนไลน์ เป็นสิ่งที่ควบคุมได้ง่ายกว่า (ในตอนแรก) เพราะเราเป็นคนกดปุ่มยืนยันเอง เช่น การโพสต์สเตตัส หรืออัปโหลดรูปภาพ
+                    </p>
+                </div>
+
+                <div class="flex-1 bg-gradient-to-br from-gray-900 to-black border-l-4 border-gray-500 p-8 rounded-xl card-hover relative group" data-aos="fade-left" data-aos-delay="400">
+                    <div class="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition transform group-hover:rotate-12">
+                        <i data-lucide="eye" class="w-24 h-24 text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-gray-700/30 rounded-lg mr-4">
+                            <i data-lucide="scan-eye" class="text-gray-400 w-8 h-8"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold">2. Passive Digital Footprint</h2>
+                    </div>
+                    <p class="text-gray-400/80 mb-4 font-semibold tracking-wide uppercase text-sm">(สิ่งที่ระบบเก็บให้)</p>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        คือข้อมูลที่ถูกเก็บรวบรวม <strong>"โดยอัตโนมัติ"</strong> ในขณะที่เราใช้งานอินเทอร์เน็ต โดยที่เราอาจไม่ได้ตั้งใจส่งให้ หรือบางครั้งไม่รู้ด้วยซ้ำว่าข้อมูลเหล่านี้ถูกบันทึกไว้ เช่น IP Address, ประวัติการเข้าชมเว็บ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="py-24 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16" data-aos="zoom-in">กรณีศึกษา <span class="text-yellow-400">(Case Studies)</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-yellow-400 transition group flex flex-col h-full card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="baby" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition">คอนเทนต์เกี่ยวกับเด็ก & PDPA</h3>
+                    <p class="text-gray-400 mb-6 flex-grow leading-relaxed">
+                        ผู้เชี่ยวชาญเตือนว่าการโพสต์ภาพเด็กลงออนไลน์ อาจละเมิดสิทธิเด็กตามกฎหมาย PDPA เด็กไม่มีสิทธิเลือกเอง และภาพเหล่านั้นอาจกลายเป็น Digital Footprint ที่ "ติดตัว" ไปจนโต หรือถูกนำไปใช้ในทางที่ไม่เหมาะสม
+                    </p>
+                    <a href="https://www.thairath.co.th/scoop/interview/2774306?utm_source=chatgpt.com" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-black transition duration-300 font-bold group-hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+                        <i data-lucide="external-link" class="w-5 h-5 mr-2"></i> อ่านข่าวเพิ่มเติม
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-yellow-400 transition group flex flex-col h-full card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="gavel" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition">หลักฐานในคดีอาญา</h3>
+                    <p class="text-gray-400 mb-6 flex-grow leading-relaxed">
+                        รอยเท้าดิจิทัลบนโซเชียลมีเดีย "ไม่หายไปเอง" ข้อมูลเหล่านี้สามารถถูกใช้เป็นหลักฐานสำคัญในการสืบสวนคดีอาญาได้ เพราะทุกอย่างถูกบันทึกเป็นหลักฐานดิจิทัล
+                    </p>
+                    <a href="https://www.tnnthailand.com/tnnexclusive/178708/?utm_source=chatgpt.com" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-black transition duration-300 font-bold group-hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+                        <i data-lucide="external-link" class="w-5 h-5 mr-2"></i> อ่านข่าวเพิ่มเติม
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-yellow-400 transition group flex flex-col h-full card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="trending-up" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition">Personal Brand ใน TikTok</h3>
+                    <p class="text-gray-400 mb-6 flex-grow leading-relaxed">
+                        นักศึกษาการตลาดดิจิทัลสร้างตัวตนบน TikTok จนเกิดโอกาสจริง ดึงดูดโอกาสทางอาชีพจากเอเจนซี่และแบรนด์ต่าง ๆ ได้ตั้งแต่ก่อนเรียนจบ ผ่านการแสดงทักษะ Storytelling และการตัดต่อ
+                    </p>
+                    <a href="https://www.spu.ac.th/fac/business/%E0%B9%84%E0%B8%82%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B3%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%88%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-personal-brand/?utm_source=chatgpt.com" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-black transition duration-300 font-bold group-hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+                        <i data-lucide="external-link" class="w-5 h-5 mr-2"></i> อ่านข่าวเพิ่มเติม
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-yellow-400 transition group flex flex-col h-full card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="building-2" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition">ความสำเร็จขององค์กร</h3>
+                    <p class="text-gray-400 mb-6 flex-grow leading-relaxed">
+                        บริษัทที่จัดการ Digital Footprint อย่างเป็นระบบ (SEO, ภาพลักษณ์เชิงบวก) สามารถเพิ่มความเชื่อมั่นและโอกาสทางธุรกิจ ช่วยลดข่าวเชิงลบได้จริง
+                    </p>
+                    <a href="https://news.postjung.com/1661370?utm_source=chatgpt.com" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-black transition duration-300 font-bold group-hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+                        <i data-lucide="external-link" class="w-5 h-5 mr-2"></i> อ่านข่าวเพิ่มเติม
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="howto" class="py-24 bg-yellow-400 text-black overflow-hidden relative">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-5xl font-bold mb-10 text-black inline-block relative">
+                        How to เช็ค & ตั้งค่า
+                        <span class="absolute bottom-0 left-0 w-full h-2 bg-black"></span>
+                    </h2>
+                    <ul class="space-y-8">
+                        <li class="flex items-start group">
+                            <div class="bg-black text-yellow-400 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0 text-xl shadow-lg group-hover:scale-110 transition">1</div>
+                            <div>
+                                <h4 class="font-bold text-2xl mb-2">เช็คตัวเองบน Google</h4>
+                                <p class="text-gray-900 text-lg">ลองค้นหา "ชื่อ-นามสกุล" ตัวเองบน Google แล้วดูผลลัพธ์ในอดีต ว่ามีข้อมูลอะไรที่เราไม่อยากให้คนอื่นเห็นหรือไม่</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start group">
+                            <div class="bg-black text-yellow-400 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0 text-xl shadow-lg group-hover:scale-110 transition">2</div>
+                            <div>
+                                <h4 class="font-bold text-2xl mb-2">ตั้งค่าความเป็นส่วนตัว (Privacy)</h4>
+                                <p class="text-gray-900 text-lg">เข้าไปตรวจสอบเมนู Settings > Privacy ใน Facebook, Instagram และ TikTok เพื่อจำกัดการเข้าถึงข้อมูลส่วนตัว</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:w-1/2 bg-black text-white p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden transform rotate-2 hover:rotate-0 transition duration-500" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="shield-check" class="w-48 h-48 text-yellow-400 floating-icon"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-yellow-400 mb-8 relative z-10">คาถา 3 ข้อก่อนโพสต์</h3>
+                    <div class="space-y-8 relative z-10">
+                        <div class="border-l-4 border-yellow-400 pl-6 hover:translate-x-2 transition duration-300">
+                            <h4 class="text-2xl font-bold mb-1">1. คิดก่อนโพสต์</h4>
+                            <p class="text-gray-400">Think before you post</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-400 pl-6 hover:translate-x-2 transition duration-300">
+                            <h4 class="text-2xl font-bold mb-1">2. ตั้งค่าความเป็นส่วนตัว</h4>
+                            <p class="text-gray-400">หลีกเลี่ยงการแชร์ข้อมูลสำคัญแบบสาธารณะ</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-400 pl-6 hover:translate-x-2 transition duration-300">
+                            <h4 class="text-2xl font-bold mb-1">3. คอยค้นหาชื่อตัวเอง</h4>
+                            <p class="text-gray-400">ตรวจสอบข้อมูลที่ปรากฏบนโลกออนไลน์สม่ำเสมอ</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="py-24 px-6 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-5xl font-bold text-center mb-6" data-aos="fade-down">แบบทดสอบวัดความรู้</h2>
+            <p class="text-center text-gray-400 mb-16 text-xl" data-aos="fade-up">ทดสอบความเข้าใจเรื่อง Digital Footprint (5 ข้อ)</p>
+            
+            <form id="quizForm" class="space-y-10">
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl shadow-xl transition hover:border-yellow-500/50" data-correct="a" data-aos="fade-up" data-aos-offset="100">
+                    <p class="text-xl font-bold mb-6 text-yellow-400 flex items-start"><span class="mr-2">1.</span> Digital Footprint คืออะไร?</p>
+                    <div class="space-y-3 pl-6">
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q1" value="a" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">ร่องรอยข้อมูลที่ผู้ใช้ทิ้งไว้จากการใช้งานอินเทอร์เน็ต ทั้งตั้งใจและไม่ตั้งใจ</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q1" value="b" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">รอยเท้าของสัตว์เลี้ยงที่ถ่ายรูปลง Facebook</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q1" value="c" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">โปรแกรมป้องกันไวรัสในคอมพิวเตอร์</span>
+                        </label>
+                    </div>
+                    <div class="feedback hidden mt-4 p-4 rounded-xl bg-gray-800 text-lg animate-pulse"></div>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl shadow-xl transition hover:border-yellow-500/50" data-correct="b" data-aos="fade-up" data-aos-offset="100">
+                    <p class="text-xl font-bold mb-6 text-yellow-400 flex items-start"><span class="mr-2">2.</span> Active Digital Footprint คือข้อใด?</p>
+                    <div class="space-y-3 pl-6">
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q2" value="a" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">IP Address ที่ระบบบันทึกอัตโนมัติ</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q2" value="b" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">การโพสต์รูปภาพหรือสเตตัสด้วยตนเอง</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q2" value="c" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">คุกกี้ (Cookies) ที่เว็บไซต์เก็บข้อมูล</span>
+                        </label>
+                    </div>
+                    <div class="feedback hidden mt-4 p-4 rounded-xl bg-gray-800 text-lg animate-pulse"></div>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl shadow-xl transition hover:border-yellow-500/50" data-correct="c" data-aos="fade-up" data-aos-offset="100">
+                    <p class="text-xl font-bold mb-6 text-yellow-400 flex items-start"><span class="mr-2">3.</span> ทำไมเราต้องระวังการโพสต์รูปเด็ก ตามกฎหมาย PDPA?</p>
+                    <div class="space-y-3 pl-6">
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q3" value="a" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">เพราะรูปจะไม่สวยเมื่อเด็กโตขึ้น</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q3" value="b" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">เพราะจะทำให้เด็กมีชื่อเสียงเร็วเกินไป</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q3" value="c" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">เพราะเป็นการละเมิดสิทธิส่วนบุคคล และอาจส่งผลกระทบต่อเด็กในอนาคต</span>
+                        </label>
+                    </div>
+                    <div class="feedback hidden mt-4 p-4 rounded-xl bg-gray-800 text-lg animate-pulse"></div>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl shadow-xl transition hover:border-yellow-500/50" data-correct="a" data-aos="fade-up" data-aos-offset="100">
+                    <p class="text-xl font-bold mb-6 text-yellow-400 flex items-start"><span class="mr-2">4.</span> ข้อใด "ไม่ใช่" คาถา 3 ข้อก่อนโพสต์?</p>
+                    <div class="space-y-3 pl-6">
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q4" value="a" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">โพสต์ทันทีที่รู้สึกโกรธ เพื่อระบายอารมณ์</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q4" value="b" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">คิดก่อนโพสต์</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q4" value="c" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">หมั่นค้นหาชื่อตัวเองใน Google</span>
+                        </label>
+                    </div>
+                    <div class="feedback hidden mt-4 p-4 rounded-xl bg-gray-800 text-lg animate-pulse"></div>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl shadow-xl transition hover:border-yellow-500/50" data-correct="b" data-aos="fade-up" data-aos-offset="100">
+                    <p class="text-xl font-bold mb-6 text-yellow-400 flex items-start"><span class="mr-2">5.</span> Passive Digital Footprint คือข้อมูลประเภทใด?</p>
+                    <div class="space-y-3 pl-6">
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q5" value="a" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">ข้อความแชทที่เราส่งหาเพื่อน</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q5" value="b" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">สิ่งที่ระบบเก็บอัตโนมัติ เช่น ประวัติการค้นหา หรือตำแหน่ง GPS</span>
+                        </label>
+                        <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-gray-800 rounded-xl transition border border-transparent hover:border-gray-700">
+                            <input type="radio" name="q5" value="c" class="form-radio text-yellow-400 focus:ring-yellow-400 h-6 w-6 bg-gray-900 border-gray-600">
+                            <span class="text-lg">วิดีโอที่เราอัปโหลดลง TikTok</span>
+                        </label>
+                    </div>
+                    <div class="feedback hidden mt-4 p-4 rounded-xl bg-gray-800 text-lg animate-pulse"></div>
+                </div>
+
+                <div class="text-center pt-10 pb-10">
+                    <button type="button" onclick="checkAnswers()" class="bg-yellow-400 text-black text-2xl font-bold py-4 px-12 rounded-full hover:bg-yellow-300 transform hover:scale-110 transition shadow-[0_0_30px_rgba(250,204,21,0.6)] animate-pulse hover:animate-none">
+                        ส่งคำตอบ & ดูคะแนน
+                    </button>
+                    <div id="scoreDisplay" class="mt-8 text-4xl font-bold hidden transition-all duration-500 ease-in-out"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center border-t border-gray-800">
+        <p class="text-gray-500 hover:text-yellow-400 transition cursor-default">© 2026 Digital Footprint Awareness. Created by กลุ่ม 1.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({
+            once: true,
+            duration: 1000,
+            easing: 'ease-out-cubic',
+        });
+
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 5;
+            const questions = document.querySelectorAll('.question-card');
+
+            questions.forEach((card, index) => {
+                const correctAnswer = card.getAttribute('data-correct');
+                const selectedOption = card.querySelector(`input[name="q${index + 1}"]:checked`);
+                const feedbackDiv = card.querySelector('.feedback');
+                
+                feedbackDiv.classList.remove('hidden', 'bg-red-900', 'bg-green-900', 'text-red-200', 'text-green-200');
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswer) {
+                        score++;
+                        feedbackDiv.classList.add('bg-green-900', 'text-green-200');
+                        feedbackDiv.innerHTML = '<strong class="flex items-center"><i data-lucide="check-circle" class="w-6 h-6 mr-3"></i> ถูกต้อง! เก่งมาก</strong>';
+                    } else {
+                        feedbackDiv.classList.add('bg-red-900', 'text-red-200');
+                        feedbackDiv.innerHTML = `<strong class="flex items-center"><i data-lucide="x-circle" class="w-6 h-6 mr-3"></i> ผิด</strong> คำตอบที่ถูกคือข้อ ${correctAnswer.toUpperCase()}`;
+                    }
+                } else {
+                    feedbackDiv.classList.add('bg-red-900', 'text-red-200');
+                    feedbackDiv.innerHTML = `<strong class="flex items-center"><i data-lucide="alert-circle" class="w-6 h-6 mr-3"></i> ยังไม่ได้ตอบ</strong> คำตอบที่ถูกคือข้อ ${correctAnswer.toUpperCase()}`;
+                }
+                
+                lucide.createIcons();
+            });
+
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            scoreDisplay.classList.remove('hidden');
+            scoreDisplay.innerHTML = `คะแนนของคุณ: <span class="text-yellow-400 text-5xl drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]">${score} / ${totalQuestions}</span>`;
+            
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
